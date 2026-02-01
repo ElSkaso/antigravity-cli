@@ -1,4 +1,3 @@
-```Markdown
 # 🚀 Antigravity CLI
 
 > **Context as Code.**
@@ -29,7 +28,6 @@ pip install -r requirements.txt
 # Create Alias (optional but recommended)
 echo "alias ag='$(pwd)/venv/bin/python $(pwd)/main.py'" >> ~/.zshrc
 source ~/.zshrc
-```
 ```
 
 
