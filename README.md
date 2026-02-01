@@ -32,6 +32,13 @@ source ~/.zshrc
 
 
 ## 🕹️ Usage
+
+**0. Initialize a Project**
+Create a new project folder with the Grand-Architect Framework.
+```Bash
+ag init "My New Project"
+```
+
 **1. Start a Task**
 Stop thinking about administrative overhead. Just work.
 

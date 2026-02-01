@@ -1,6 +1,8 @@
 import typer
 import re
 import subprocess
+import os
+from templates import FILES, REQUIREMENTS # Importiert unseren Speicher
 from pathlib import Path
 from datetime import datetime
 from rich.console import Console
@@ -99,7 +101,7 @@ def finish():
     except Exception as e:
         console.print(f"[red]Git Error: {e}[/red]")
 
-# --- COMMAND 4: LOG (NEU) ---
+# --- COMMAND 4: LOG ---
 @app.command()
 def log(markdown: bool = False, export: bool = False):
     """
@@ -161,6 +163,52 @@ def log(markdown: bool = False, export: bool = False):
         table.add_row(entry['time'], entry['task'])
 
     console.print(table)
+
+# --- COMMAND 5: INIT (GENESIS) ---
+@app.command()
+def init(name: str):
+    """
+    Erstellt ein neues Antigravity-Projekt (Ordner + 7 Files + Git).
+    """
+    project_path = Path(name)
+
+    # 1. Ordner erstellen
+    if project_path.exists():
+        console.print(f"[bold red]❌ Error:[/bold red] Directory '{name}' already exists.")
+        raise typer.Exit(code=1)
+    
+    console.print(f"[bold blue]🏗️  Scaffolding Project: {name}[/bold blue]")
+    project_path.mkdir()
+
+    # 2. Die Grand-Architect Files schreiben
+    for filename, content in FILES.items():
+        file_path = project_path / filename
+        file_path.write_text(content, encoding="utf-8")
+        console.print(f"   [green]✔ Created:[/green] {filename}")
+
+    # 3. Requirements.txt erstellen
+    (project_path / "requirements.txt").write_text(REQUIREMENTS, encoding="utf-8")
+    console.print(f"   [green]✔ Created:[/green] requirements.txt")
+
+    # 4. Git initialisieren
+    console.print("[dim]⚙️  Initializing Git...[/dim]")
+    subprocess.run(["git", "init"], cwd=project_path, check=True, stdout=subprocess.DEVNULL)
+    
+    # 5. Virtual Environment erstellen (Optional, aber empfohlen)
+    console.print("[dim]🐍 Creating venv...[/dim]")
+    subprocess.run(["python3", "-m", "venv", "venv"], cwd=project_path, check=True)
+
+    # 6. Abschlussbericht
+    console.print(Panel(
+        f"Project [bold cyan]{name}[/bold cyan] created successfully!\n\n"
+        f"1. cd {name}\n"
+        f"2. source venv/bin/activate\n"
+        f"3. pip install -r requirements.txt\n"
+        f"4. ag status",
+        title="[bold green]🚀 Ready for Takeoff[/bold green]",
+        border_style="green"
+    ))
+
 
 if __name__ == "__main__":
     app()
