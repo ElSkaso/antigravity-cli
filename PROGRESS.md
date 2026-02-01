@@ -13,6 +13,7 @@
 * [ ] **Phase 2: The Writer ('start'/'finish')**
 
 ## Changelog
+* **2026-02-01 20:50:** templates refinement v2
 * **2026-02-01 20:48:** templates refinement
 * **2026-02-01 20:39:** Readme refinement
 * **2026-02-01 20:34:** Implement init command and template storage
