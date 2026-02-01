@@ -31,16 +31,17 @@ source ~/.zshrc
 ```
 
 
-🕹️ Usage
-1. Start a Task
+## 🕹️ Usage
+**1. Start a Task**
 Stop thinking about administrative overhead. Just work.
 
 ```Bash
 ag start "Implement new login logic"
-Updates PROGRESS.md "Current Task" and sets the mental context.
 ```
+Updates `PROGRESS.md` "Current Task" and sets the mental context.
 
-2. Check Status
+
+**2. Check Status**
 See where you are at a glance.
 
 ```Bash
@@ -48,7 +49,7 @@ ag status
 Displays a rich terminal panel with Phase and Task.
 ```
 
-3. Finish & Commit
+**3. Finish & Commit**
 The magic moment. Archives the task and pushes to git.
 
 ```Bash
@@ -56,7 +57,7 @@ ag finish
 Moves task to history, timestamps it, and runs git commit -m "Finish: ...".
 ```
 
-4. View History
+**4. View History**
 See what you accomplished.
 
 ```Bash
@@ -64,15 +65,16 @@ ag log          # Pretty table in terminal
 ag log --export # Generates HISTORY.md for reporting
 ```
 
-🏗️ The Antigravity Framework Structure
+## 🏗️ The Antigravity Framework Structure
 This tool is built to manage the Antigravity File Structure:
 
-- MISSION.md: The Why.
+- `MISSION.md`: The Why.
 
-- SPEC_PRODUCT.md: The What.
+- `SPEC_PRODUCT.md`: The What.
 
-- SPEC_TECH.md: The How.
+- `SPEC_TECH.md`: The How.
 
-- PROGRESS.md: The When (Managed by this CLI).
+- `PROGRESS.md`: The When (Managed by this CLI).
 
-Built with Typer & Rich.
+***
+Built with [Typer](https://typer.tiangolo.com/) & [Rich](https://rich.readthedocs.io/en/stable/).

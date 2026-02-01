@@ -13,6 +13,7 @@
 * [ ] **Phase 2: The Writer ('start'/'finish')**
 
 ## Changelog
+* **2026-02-01 17:12:** Refined readme again
 * **2026-02-01 17:02:** Refined readme
 * **2026-02-01 16:58:** Polish readme and doc
 * **2026-02-01 16:26:** Implement log command with export feature
