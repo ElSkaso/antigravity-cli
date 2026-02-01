@@ -1,19 +1,19 @@
 # templates.py
-# Die DNA des Grand-Architect Frameworks
+# Die ECHTE Antigravity DNA - Minimal & Fokusiert.
 
 FILES = {
-    "MISSION.md": """# 🎯 Mission
+    "01_MISSION.md": """# 🎯 Mission
 > **The Why.**
 > What is the ultimate goal? What problem are we solving?
 
 ## Core Objective
-* [ ] Define the primary goal here.
+* [ ] Define the primary goal here (One sentence).
 
 ## Non-Goals
-* [ ] What are we NOT doing?
+* [ ] What are we NOT doing? (Scope defense).
 """,
 
-    "SPEC_PRODUCT.md": """# 📦 Product Specification
+    "02_SPEC_PRODUCT.md": """# 📦 Product Specification
 > **The What.**
 > Features, User Stories, UX flow.
 
@@ -25,7 +25,7 @@ FILES = {
 2. Feature B
 """,
 
-    "SPEC_TECH.md": """# ⚙️ Technical Specification
+    "03_SPEC_TECH.md": """# ⚙️ Technical Specification
 > **The How.**
 > Architecture, Stack, Data Models.
 
@@ -37,7 +37,7 @@ FILES = {
 * ...
 """,
 
-    "PROGRESS.md": """# 🚧 Progress & Changelog
+    "04_PROGRESS.md": """# 🚧 Progress & Changelog
 > **The When.**
 > Current status and history.
 
@@ -53,23 +53,33 @@ FILES = {
 * **Init:** Project created via Antigravity CLI.
 """,
 
-    "todo.md": """# ✅ Todo List
+    "05_TODO.md": """# ✅ Todo List
 > Tactical, small steps.
 
-* [ ] Initial Commit
+* [ ] Initial Commit (`ag finish`)
+* [ ] Fill out 01_MISSION.md
 """,
-    
-    ".gitignore": """# Standard Python Gitignore
-__pycache__/
-*.py[cod]
-venv/
-.env
-.DS_Store
-.vscode/
+
+    "06_BRAINSTORM.md": """# 🧠 Brainstorming
+> Unstructured ideas and notes.
+
+* ...
+""",
+
+    "07_CONTEXT_AI.md": """# 🤖 AI Context
+> Meta-Information for LLMs (Copy/Paste this).
+
+## Project Identity
+* **Name:** {name}
+* **Goal:** See 01_MISSION.md
+* **Stack:** Python, Typer, Markdown-based State.
+
+## Workflow rules
+1. Update `04_PROGRESS.md` on every major step.
+2. Keep code simple.
 """
 }
 
-# Optional: Standard Requirements
 REQUIREMENTS = """typer
 rich
 """
