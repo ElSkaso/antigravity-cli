@@ -33,13 +33,14 @@ source ~/.zshrc
 
 ## 🕹️ Usage
 
-**0. Initialize a Project**
+**0. Initialize a Project**\
 Create a new project folder with the Grand-Architect Framework.
+
 ```Bash
 ag init "My New Project"
 ```
 
-**1. Start a Task**
+**1. Start a Task**\
 Stop thinking about administrative overhead. Just work.
 
 ```Bash
@@ -48,7 +49,7 @@ ag start "Implement new login logic"
 Updates `PROGRESS.md` "Current Task" and sets the mental context.
 
 
-**2. Check Status**
+**2. Check Status**\
 See where you are at a glance.
 
 ```Bash
@@ -56,7 +57,7 @@ ag status
 Displays a rich terminal panel with Phase and Task.
 ```
 
-**3. Finish & Commit**
+**3. Finish & Commit**\
 The magic moment. Archives the task and pushes to git.
 
 ```Bash
@@ -64,7 +65,7 @@ ag finish
 Moves task to history, timestamps it, and runs git commit -m "Finish: ...".
 ```
 
-**4. View History**
+**4. View History**\
 See what you accomplished.
 
 ```Bash
