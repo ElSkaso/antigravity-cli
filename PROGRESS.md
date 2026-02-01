@@ -13,6 +13,7 @@
 * [ ] **Phase 2: The Writer ('start'/'finish')**
 
 ## Changelog
+* **2026-02-01 16:58:** Polish readme and doc
 * **2026-02-01 16:26:** Implement log command with export feature
 * **2026-02-01 15:07:** Finalize Antigravity CLI (Completed)
 * **Init:** Project generated via Shell Script.
