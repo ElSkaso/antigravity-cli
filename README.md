@@ -1,88 +1,80 @@
-# 🚀 Antigravity CLI
+# 🚀 Antigravity Studio
 
 > **Context as Code.**
-> Stop manually updating your documentation. Let your CLI do it while you work.
+> The ultimate goal is to create an orchestration manager that allows you to delegate software projects to AI agents.
 
-The **Antigravity CLI** is a Python-based tool designed to eliminate the friction between coding and reporting. It manages your project's status (`PROGRESS.md`) and your version control (`git`) with single commands.
+**Antigravity Studio** is a "Sidecar" application that runs alongside your actual software project. It uses **Google Gemini (`gemini-pro-latest`)** to act as your AI Architect, helping you draft Missions, Specs, and Tech definitions while keeping you in full control via a visual Diff-View.
+
+Instead of polluting your project with tool-specific configs, Antigravity acts as a cleanly separated "Manager" that injects structure only where needed.
 
 ## ✨ Features
 
-* **⚡ Frictionless Workflow:** Update status and commit code in one go.
-* **📄 Markdown as Database:** No SQLite, no JSON sidecars. The `PROGRESS.md` is the Single Source of Truth.
-* **🧠 Auto-Context:** Keeps your AI agents (and your team) always in sync with the latest project status.
-* **🛡️ Git Integration:** Automatically stages, commits, and timestamps your progress.
-* **📊 History Export:** Generates clean Markdown tables of your changelog (`ag log --export`).
+* **🛰️ Sidecar Architecture:** The tool lives outside your target project. It manages documentation and code injection without forcing its own dependencies on your codebase.
+* **🧠 AI Architect:** Built-in integration with `gemini-pro-latest` to generate and refine architecture documents based on your prompts.
+* **👀 Visual Diff-View:** Review AI suggestions in a React-based UI (Green/Red diffs) before applying them to your files.
+* **⚡ Hot-Plug:** Connect to any project on your disk simply by passing the path (e.g., `python server.py ../my-project`).
+* **📂 Lazy Structure:** Automatically creates the `ag/` folder structure in your target project only when you confirm a change.
 
 ## 📦 Installation
 
-```Bash
+The Studio consists of a Python Backend (Logic & AI) and a React Frontend (UI).
+
+### 1. Backend Setup (Python)
+
+```bash
 # Clone the repo
-git clone [https://github.com/YOUR_USERNAME/antigravity-cli.git](https://github.com/YOUR_USERNAME/antigravity-cli.git)
-cd antigravity-cli
+git clone [https://github.com/YOUR_USERNAME/antigravity-studio.git](https://github.com/YOUR_USERNAME/antigravity-studio.git)
+cd antigravity-studio
 
-# Setup venv & install
+# Create & Activate Virtual Environment
 python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
+source venv/bin/activate  # Windows: venv\Scripts\activate
 
-# Create Alias (optional but recommended)
-echo "alias ag='$(pwd)/venv/bin/python $(pwd)/main.py'" >> ~/.zshrc
-source ~/.zshrc
+# Install Dependencies
+pip install fastapi uvicorn google-generativeai python-dotenv
 ```
 
+### 2. Frontend Setup (Node.js)
+
+```bash
+cd gui
+npm install
+```
+
+### 3. Configuration
+Create a `.env` file in the root folder of the studio:
+```env
+GOOGLE_API_KEY=your_gemini_api_key_here
+```
 
 ## 🕹️ Usage
 
-**0. Initialize a Project**\
-Create a new project folder with the Grand-Architect Framework.
+Since this is a client-server application, you generally need two terminal windows.
 
-```Bash
-ag init "My New Project"
+**Terminal 1: The Backend (Brain)**
+Point the server to the project you want to manage.
+```bash
+# Syntax: python server.py [PATH_TO_TARGET_PROJECT]
+source venv/bin/activate
+python server.py ../my-plant-app
 ```
 
-**1. Start a Task**\
-Stop thinking about administrative overhead. Just work.
-
-```Bash
-ag start "Implement new login logic"
-```
-Updates `PROGRESS.md` "Current Task" and sets the mental context.
-
-
-**2. Check Status**\
-See where you are at a glance.
-
-```Bash
-ag status
-Displays a rich terminal panel with Phase and Task.
+**Terminal 2: The Frontend (Interface)**
+```bash
+cd gui
+npm run dev
 ```
 
-**3. Finish & Commit**\
-The magic moment. Archives the task and pushes to git.
+**Open Studio:**
+Go to [http://localhost:5173](http://localhost:5173) in your browser.
 
-```Bash
-ag finish
-Moves task to history, timestamps it, and runs git commit -m "Finish: ...".
-```
+## 🏗️ The Framework Structure
+Antigravity manages the following "Grand-Architect" files within an `ag/` folder in your target project:
 
-**4. View History**\
-See what you accomplished.
-
-```Bash
-ag log          # Pretty table in terminal
-ag log --export # Generates HISTORY.md for reporting
-```
-
-## 🏗️ The Antigravity Framework Structure
-This tool is built to manage the Antigravity File Structure:
-
-- `MISSION.md`: The Why.
-
-- `SPEC_PRODUCT.md`: The What.
-
-- `SPEC_TECH.md`: The How.
-
-- `PROGRESS.md`: The When (Managed by this CLI).
+* `MISSION.md`: The Strategic Vision (The Why).
+* `SPEC_PRODUCT.md`: The Features & User Stories (The What).
+* `SPEC_TECH.md`: The Architecture & Data Structure (The How).
+* `PROGRESS.md`: The Current State & Changelog (The When).
 
 ***
-Built with [Typer](https://typer.tiangolo.com/) & [Rich](https://rich.readthedocs.io/en/stable/).
+Built with **FastAPI**, **React**, and **Google Gemini**.

@@ -1,4 +1,4 @@
-#!/Users/rene.puskas/Documents/Git/gaDogfood/ga_dogFood/venv/bin/python3
+#!/Users/rene.puskas/Documents/Git/project-grand-architect/antigravity-cli/venv/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys

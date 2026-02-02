@@ -29,7 +29,7 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/Users/rene.puskas/Documents/Git/gaDogfood/ga_dogFood/venv"
+set -gx VIRTUAL_ENV "/Users/rene.puskas/Documents/Git/project-grand-architect/antigravity-cli/venv"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH
