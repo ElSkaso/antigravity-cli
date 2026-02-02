@@ -11,9 +11,16 @@
     * [x] Create `main.py` skeleton.
     * [x] Implement Markdown parsing.
 * [x] **Phase 2: The Writer ('start'/'finish')**
-* [ ] **Phase 3: AI Advanced Features**
+* [x] **Phase 3: AI Advanced Features**
+* [x] **Phase 4: Refactoring & Architecture**
+    * [x] Restructure data folder to `gaf_definitions`.
+    * [x] Move backend code to `backend/`.
 
 ## Changelog
+* **2026-02-03 00:23:** Modularization of backend functions. Markdown definitions now have their own folder. Markdown files have been reduced to 4 core files
+* **2026-02-02 18:00:** Implemented dynamic Role System (`roles.py`, `ai_engine.py`, `fs_manager.py`).
+* **2026-02-02 17:28:** Refactored backend structure (Moved code to `backend/`).
+* **2026-02-02 17:10:** Restructured project to use `gaf_definitions` recursively.
 * **2026-02-02 16:34:** Updated requirements.txt
 * **2026-02-02 16:32:** Implemented sidecar architecture
 * **2026-02-02 13:51:** Created gui

@@ -11,9 +11,8 @@ Instead of polluting your project with tool-specific configs, Antigravity acts a
 
 * **🛰️ Sidecar Architecture:** The tool lives outside your target project. It manages documentation and code injection without forcing its own dependencies on your codebase.
 * **🧠 AI Architect:** Built-in integration with `gemini-pro-latest` to generate and refine architecture documents based on your prompts.
-* **👀 Visual Diff-View:** Review AI suggestions in a React-based UI (Green/Red diffs) before applying them to your files.
-* **⚡ Hot-Plug:** Connect to any project on your disk simply by passing the path (e.g., `python server.py ../my-project`).
-* **📂 Lazy Structure:** Automatically creates the `ag/` folder structure in your target project only when you confirm a change.
+* **⚡ Hot-Plug:** Connect to any project on your disk simply by passing the path (e.g., `python backend/server.py ../my-project`).
+* **📂 Lazy Structure:** Automatically creates the `gaf_definitions/` folder structure in your target project only when you confirm a change.
 
 ## 📦 Installation
 
@@ -54,9 +53,9 @@ Since this is a client-server application, you generally need two terminal windo
 **Terminal 1: The Backend (Brain)**
 Point the server to the project you want to manage.
 ```bash
-# Syntax: python server.py [PATH_TO_TARGET_PROJECT]
+# Syntax: python backend/server.py [PATH_TO_TARGET_PROJECT]
 source venv/bin/activate
-python server.py ../my-plant-app
+python backend/server.py ../my-plant-app
 ```
 
 **Terminal 2: The Frontend (Interface)**
@@ -69,7 +68,7 @@ npm run dev
 Go to [http://localhost:5173](http://localhost:5173) in your browser.
 
 ## 🏗️ The Framework Structure
-Antigravity manages the following "Grand-Architect" files within an `ag/` folder in your target project:
+Antigravity manages the following "Grand-Architect" files within an `gaf_definitions/` folder in your target project:
 
 * `MISSION.md`: The Strategic Vision (The Why).
 * `SPEC_PRODUCT.md`: The Features & User Stories (The What).
@@ -77,4 +76,4 @@ Antigravity manages the following "Grand-Architect" files within an `ag/` folder
 * `PROGRESS.md`: The Current State & Changelog (The When).
 
 ***
-Built with **FastAPI**, **React**, and **Google Gemini**.
+Built with **FastAPI**, **React**, and **Google Gemini**.O

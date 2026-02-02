@@ -14,7 +14,7 @@ from rich import box
 # Setup
 app = typer.Typer(no_args_is_help=True)
 console = Console()
-PROGRESS_FILE = Path("PROGRESS.md")
+PROGRESS_FILE = Path("gaf_definitions/PROGRESS.md")
 
 def get_content():
     if not PROGRESS_FILE.exists():
@@ -181,8 +181,11 @@ def init(name: str):
     project_path.mkdir()
 
     # 2. Die Grand-Architect Files schreiben
+    gaf_dir = project_path / "gaf_definitions"
+    gaf_dir.mkdir()
+    
     for filename, content in FILES.items():
-        file_path = project_path / filename
+        file_path = gaf_dir / filename
         file_path.write_text(content, encoding="utf-8")
         console.print(f"   [green]✔ Created:[/green] {filename}")
 
