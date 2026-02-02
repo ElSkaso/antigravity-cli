@@ -1,2 +1,6 @@
-typer[all]
+fastapi
+uvicorn
+google-generativeai
+python-dotenv
+typer
 rich

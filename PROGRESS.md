@@ -14,6 +14,7 @@
 * [ ] **Phase 3: AI Advanced Features**
 
 ## Changelog
+* **2026-02-02 16:34:** Updated requirements.txt
 * **2026-02-02 16:32:** Implemented sidecar architecture
 * **2026-02-02 13:51:** Created gui
 * **2026-02-03 11:00:** Implemented live preview (react-markdown), typography plugin, and split-screen IDE layout.
